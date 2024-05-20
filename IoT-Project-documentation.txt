@@ -1,0 +1,46 @@
+IoT Project
+Project Problem
+To Control the Fan Speed and Water Pump speed of Coolers and Ducts efficiently and automatically using web application, android application and iOS application.
+Project Scope
+1. To find Temperature and humidity of the room and adjust the fan speed and pump speed accordingly
+2. To find the water level of the cooler
+3. To adjust the Fan speed and Pump speed as per requirement of the user through website or android/iOS application
+4. To Design a PCB board which can change the Fan speed and Pump speed as per command
+5. To design a Display Led for showing Current readings of all sensors
+6. To create web, android and iOS application to control the appliance
+7. To find the electric usage of the appliance
+
+Project Tasks
+Creating a web application
+Creating a web framework
+Creating android/ iOS application
+Designing the code for all sensors
+Assembling the hardware
+
+Resources Requirement
+Hardware Requirement
+1. Temperature and Humidity sensor DHT11
+2. Ultra Sonic Sensor
+3. Arduino ESP32
+4. Current Sensor
+5. PCB Board
+6. LED display
+
+Software Requirement
+1) Arduino IDE
+a) Time Library
+b) Weather Library
+c) Wifi Library
+2) Tech Stack
+a) Mongo DB
+b) Express
+c) React
+d) Node.js
+
+
+DHT11- This sensor has been used for calculating the temperature and humidity of the room. It uses two electrodes and a dielectric to measure humidity. The capacitance increase in electrode directly represents the increase in humidity. The DHT11 also uses a thermistor to calculate the temperature. As resistance increases in thermistor, the temperature decreases. 
+
+Ultra Sonic Sensor- This sensor is used for accurately calculating the water level in the cooler. It uses ultrasonic frequency to measure depth of water. The ultra sonic frequency is transmitted and measures the time it takes to reach the receiver.
+Arduino ESP32 - Arduino ESP32 has been used as the Arduino board with ESP32 microcontroller as it offers Wi-Fi and Bluetooth connectivity.
+PCB - Programmable Circuit Board has been used to control the Fan speed and Water Pump Speed as per the requirement and response given by web application or android/ iOS application
+LED Display- it is used for showing the current status of temperature, humidity, water level, fan speed and water pump speed
