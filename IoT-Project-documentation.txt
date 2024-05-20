@@ -9,6 +9,7 @@ Project Scope
 5. To design a Display Led for showing Current readings of all sensors
 6. To create web, android and iOS application to control the appliance
 7. To find the electric usage of the appliance
+8. service for each company can be added
 
 Project Tasks
 Creating a web application
