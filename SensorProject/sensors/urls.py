@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import sensor_data, display_data
+from . import views
 
 urlpatterns = [
-    path('sensor-data/', sensor_data, name='sensor_data'),
-    path('', display_data, name='display_data'),
+    path('', views.index, name='index'),
+    path('fetch/', views.fetch_sensor_values, name='fetch_sensor_values'),
 ]
