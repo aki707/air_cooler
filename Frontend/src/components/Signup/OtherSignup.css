@@ -1,0 +1,27 @@
+.other button{
+    display: inline-block;
+    align-items: center;
+    background-color: #e8d6d6;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 350px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.Orsignup{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-left: 130px;
+}
+.line{
+  position: 0 center;
+  height: 1px;
+}
