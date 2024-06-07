@@ -1,0 +1,15 @@
+.readings img{
+    height: 20%;
+    width: 20%;
+    object-fit: contain;
+    display: inline-block;
+}
+.readings p{
+    display: inline-block;
+    font-size: 1 rem;
+    color: #000;
+}
+.nested-1{
+    margin-bottom: 10px;
+}
+    
