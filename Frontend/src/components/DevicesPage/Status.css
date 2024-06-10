@@ -4,3 +4,9 @@
     max-height: 5px;
     max-width: 5px;
 }
+.Status img{
+    display: flex;
+    align-items: right;
+    height: 7%;
+    width: 7%;
+}
