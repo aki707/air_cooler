@@ -6,6 +6,7 @@ from sensors.views import login_page, register_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api-auth/', include('rest_framework.urls')),
     path('', include('sensors.urls')),
     path( 'login/', login_page, name=" login_page" ) ,
     path( 'register/', register_page, name=" login_page" ) ,
