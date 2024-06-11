@@ -10,6 +10,8 @@ import DisplayForm from './components/Forms/display/DisplayForm'
 import AccountForm from './components/Forms/account/AccountForm';
 import AppearanceForm from './components/Forms/appearance/AppearanceForm';
 import NotificationsForm from './components/Forms/notifications/NotificationsForm';
+import ProductPage from './components/ProductsPage/ProductPage.jsx';
+import ProductTab from './components/ProductsPage/ProductTab';
 
 function App() {
   return (
@@ -30,6 +32,10 @@ function App() {
 
 
       
+      <Route path="/pg" Component={ProductPage} />
+      <Route path="/pt" Component={ProductTab} />
+
+
 
       {/* <Route path='/buy' Component={Buy}/> */}
     </Routes>
