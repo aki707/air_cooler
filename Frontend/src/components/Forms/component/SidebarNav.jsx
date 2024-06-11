@@ -1,12 +1,15 @@
 "use client"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { Link, useLocation } from "react-router-dom";
+// import { usePathname } from "next/navigation"
 
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 
+
+
 export function SidebarNav({ className, items, ...props }) {
-  const pathname = usePathname()
+  const Location = useLocation();
+
 
   return (
     <nav
@@ -19,10 +22,10 @@ export function SidebarNav({ className, items, ...props }) {
       {items.map(item => (
         <Link
           key={item.href}
-          href={item.href}
+          to={item.href}
           className={cn(
             buttonVariants({ variant: "ghost" }),
-            pathname === item.href
+            location.pathname === item.href
               ? "bg-muted hover:bg-muted"
               : "hover:bg-transparent hover:underline",
             "justify-start"

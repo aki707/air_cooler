@@ -1,5 +1,5 @@
-"use client"
-import Link from "next/link"
+// "use client"
+// import Link from "next/link"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
@@ -50,7 +50,7 @@ const defaultValues = {
   security_emails: true
 }
 
-export function NotificationsForm() {
+export default function NotificationsForm() {
   const form = useForm({
     resolver: zodResolver(notificationsFormSchema),
     defaultValues
@@ -218,7 +218,7 @@ export function NotificationsForm() {
                 </FormLabel>
                 <FormDescription>
                   You can manage your mobile notifications in the{" "}
-                  <Link href="/examples/forms">mobile settings</Link> page.
+                  {/* <Link href="/Forms">mobile settings</Link> page. */}
                 </FormDescription>
               </div>
             </FormItem>

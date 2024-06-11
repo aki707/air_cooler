@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { CalendarIcon, CaretSortIcon, CheckIcon } from "@radix-ui/react-icons"
 import { format } from "date-fns"
@@ -67,7 +67,7 @@ const defaultValues = {
   // dob: new Date("2023-01-23"),
 }
 
-export function AccountForm() {
+export default function AccountForm() {
   const form = useForm({
     resolver: zodResolver(accountFormSchema),
     defaultValues

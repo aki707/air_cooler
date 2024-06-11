@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { ChevronDownIcon } from "@radix-ui/react-icons"
 import { useForm } from "react-hook-form"
@@ -33,7 +33,7 @@ const defaultValues = {
   theme: "light"
 }
 
-export function AppearanceForm() {
+export default function AppearanceForm() {
   const form = useForm({
     resolver: zodResolver(appearanceFormSchema),
     defaultValues

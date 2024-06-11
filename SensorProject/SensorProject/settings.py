@@ -43,7 +43,11 @@ INSTALLED_APPS = [
     'channels',
 ]
 
-CROS_ALLOW_ORIGINS = ['http://localhost:5173/']
+CORS_ALLOWED_ORIGINS = [
+      "http://127.0.0.1:5173",
+      "http://localhost:5173",
+  ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -53,6 +57,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
+
 ]
 
 ROOT_URLCONF = 'SensorProject.urls'

@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
@@ -54,7 +54,7 @@ const defaultValues = {
   items: ["recents", "home"]
 }
 
-export function DisplayForm() {
+export default function DisplayForm() {
   const form = useForm({
     resolver: zodResolver(displayFormSchema),
     defaultValues

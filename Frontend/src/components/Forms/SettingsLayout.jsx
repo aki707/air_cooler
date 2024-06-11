@@ -1,56 +1,61 @@
-import Image from "next/image"
-
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import { Link, Outlet } from 'react-router-dom';
 import { Separator } from "@/components/ui/separator"
-import { SidebarNav } from "./components/sidebar-nav"
+import { SidebarNav } from "./component/SidebarNav"
 
-export const metadata = {
-  title: "Forms",
-  description: "Advanced form example using react-hook-form and Zod."
-}
+// export const metadata = {
+//   title: "Forms",
+//   description: "Advanced form example using react-hook-form and Zod."
+// }
 
 const sidebarNavItems = [
   {
     title: "Profile",
-    href: "/examples/forms"
+    href: "profile"
   },
   {
     title: "Account",
-    href: "/examples/forms/account"
+    href: "account"
   },
   {
     title: "Appearance",
-    href: "/examples/forms/appearance"
+    href: "appearance"
   },
   {
     title: "Notifications",
-    href: "/examples/forms/notifications"
+    href: "notifications"
   },
   {
     title: "Display",
-    href: "/examples/forms/display"
+    href: "display"
   }
 ]
 
-export default function SettingsLayout({ children }) {
+export default function SettingsLayout() {
   return (
     <>
+      {/* <Helmet>
+        <title>Forms - Advanced form example using react-hook-form and Zod</title>
+        <meta name="description" content="Advanced form example using react-hook-form and Zod." />
+      </Helmet>
       <div className="md:hidden">
-        <Image
+        <img
           src="/examples/forms-light.png"
           width={1280}
           height={791}
           alt="Forms"
           className="block dark:hidden"
         />
-        <Image
+        <img
           src="/examples/forms-dark.png"
           width={1280}
           height={791}
           alt="Forms"
           className="hidden dark:block"
-        />
-      </div>
-      <div className="hidden space-y-6 p-10 pb-16 md:block">
+        /> */}
+      {/* </div> */}
+      <div className="hidden space-y-6 p-10 pb-16 md:block border border-grey rounded-md " >
         <div className="space-y-0.5">
           <h2 className="text-2xl font-bold tracking-tight">Settings</h2>
           <p className="text-muted-foreground">
@@ -62,7 +67,7 @@ export default function SettingsLayout({ children }) {
           <aside className="-mx-4 lg:w-1/5">
             <SidebarNav items={sidebarNavItems} />
           </aside>
-          <div className="flex-1 lg:max-w-2xl">{children}</div>
+          <div className="flex-1 lg:max-w-2xl"><Outlet/></div>
         </div>
       </div>
     </>

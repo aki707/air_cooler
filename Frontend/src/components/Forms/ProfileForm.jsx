@@ -1,5 +1,5 @@
 "use client"
-import Link from "next/link"
+import { Link } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useFieldArray, useForm } from "react-hook-form"
 import { z } from "zod"
@@ -62,7 +62,7 @@ const defaultValues = {
   ]
 }
 
-export function ProfileForm() {
+export default function ProfileForm() {
   const form = useForm({
     resolver: zodResolver(profileFormSchema),
     defaultValues,
