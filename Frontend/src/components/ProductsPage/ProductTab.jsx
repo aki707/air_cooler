@@ -7,13 +7,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Toast } from '@/components/ui/toast'
 // import { listenNowAlbums, madeForYouAlbums } from '../data/albums'
 // import { AlbumArtwork } from './album-artwork'
-// import { PodcastEmptyPlaceholder } from './podcast-empty-placeholder'
 
 export default function ProductTab() {
   return (
     <Tabs defaultValue='music' className='h-full space-y-6'>
       <div className='space-between flex items-center'>
-        <TabsList>
+        {/* <TabsList>
           <TabsTrigger value='music' className='relative'>
             Music
           </TabsTrigger>
@@ -21,7 +20,7 @@ export default function ProductTab() {
           <TabsTrigger value='live' disabled>
             Live
           </TabsTrigger>
-        </TabsList>
+        </TabsList> */}
         <div className='ml-auto mr-4'>
           <Button
             onClick={() => {

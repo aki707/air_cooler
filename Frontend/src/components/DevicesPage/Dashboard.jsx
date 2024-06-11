@@ -70,7 +70,9 @@ export default function Dashboard() {
                 <TableBody>
                   <TableRow>
                     <TableCell>
-                      <div className="font-medium">Device_1_Name</div>
+                      <div className="font-medium">
+                        Device_1_Name
+                        </div>
                       <div className="hidden text-sm text-muted-foreground md:inline">
                         Device_1_model_number
                       </div>
@@ -90,9 +92,11 @@ export default function Dashboard() {
                   </TableRow>
                   <TableRow>
                     <TableCell>
-                      <div className="font-medium">Olivia Smith</div>
+                      <div className="font-medium">
+                      Device_2_Name
+                      </div>
                       <div className="hidden text-sm text-muted-foreground md:inline">
-                        olivia@example.com
+                      Device_2_model_number
                       </div>
                     </TableCell>
                     <TableCell className="hidden xl:table-column">
@@ -106,13 +110,17 @@ export default function Dashboard() {
                     <TableCell className="hidden md:table-cell lg:hidden xl:table-column">
                       2023-06-24
                     </TableCell>
-                    <TableCell className="text-right">$150.00</TableCell>
+                    <TableCell className="text-right">
+                    <Status />
+                    </TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>
-                      <div className="font-medium">Noah Williams</div>
+                      <div className="font-medium">
+                      Device_3_Name
+                      </div>
                       <div className="hidden text-sm text-muted-foreground md:inline">
-                        noah@example.com
+                      Device_3_model_number
                       </div>
                     </TableCell>
                     <TableCell className="hidden xl:table-column">
@@ -126,13 +134,15 @@ export default function Dashboard() {
                     <TableCell className="hidden md:table-cell lg:hidden xl:table-column">
                       2023-06-25
                     </TableCell>
-                    <TableCell className="text-right">$350.00</TableCell>
+                    <TableCell className="text-right"><Status /></TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>
-                      <div className="font-medium">Emma Brown</div>
+                      <div className="font-medium">
+                      Device_4_Name
+                      </div>
                       <div className="hidden text-sm text-muted-foreground md:inline">
-                        emma@example.com
+                      Device_4_model_number
                       </div>
                     </TableCell>
                     <TableCell className="hidden xl:table-column">
@@ -146,7 +156,7 @@ export default function Dashboard() {
                     <TableCell className="hidden md:table-cell lg:hidden xl:table-column">
                       2023-06-26
                     </TableCell>
-                    <TableCell className="text-right">$450.00</TableCell>
+                    <TableCell className="text-right"><Status /></TableCell>
                   </TableRow>
                 </TableBody>
               </Table>

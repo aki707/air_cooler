@@ -3,8 +3,8 @@ import { Helmet } from 'react-helmet';
 import { Link, Outlet } from 'react-router-dom';
 import { Separator } from "@/components/ui/separator"
 import { SidebarNav } from "./component/SidebarNav"
-
-// export const metadata = {
+import Navbar from '../DevicesPage/Navbar';
+// export con st metadata = {
 //   title: "Forms",
 //   description: "Advanced form example using react-hook-form and Zod."
 // }
@@ -35,6 +35,9 @@ const sidebarNavItems = [
 export default function SettingsLayout() {
   return (
     <>
+      <div>
+        <Navbar/>
+      </div>
       {/* <Helmet>
         <title>Forms - Advanced form example using react-hook-form and Zod</title>
         <meta name="description" content="Advanced form example using react-hook-form and Zod." />

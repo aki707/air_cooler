@@ -57,13 +57,7 @@ return(
             href="#"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
-            Customers
-          </a>
-          <a
-            href="#"
-            className="text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Analytics
+            Settings
           </a>
         </nav>
         <Sheet>
