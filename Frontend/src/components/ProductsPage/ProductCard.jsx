@@ -1,5 +1,7 @@
-import { ListMusic, PlusCircle } from 'lucide-react'
-
+/** @jsxImportSource react */
+import { Button } from "@/components/ui/button.jsx";
+import { BsPlusCircle } from "react-icons/bs"
+import { allproducts } from "./allproducts"
 import {
   ContextMenu,
   ContextMenuContent,
@@ -8,82 +10,46 @@ import {
   ContextMenuSub,
   ContextMenuSubContent,
   ContextMenuSubTrigger,
-  ContextMenuTrigger,
-} from '~/components/ui/context-menu'
-import { cn } from '~/lib/utils'
-import { Album } from '../data/albums'
-import { playlists } from '../data/playlists'
-
-// interface AlbumArtworkProps extends React.HTMLAttributes<HTMLDivElement> {
-//   album: Album
-//   aspectRatio?: 'portrait' | 'square'
-//   width?: number
-//   height?: number
-// }
-
+  ContextMenuTrigger
+} from "@/components/ui/context-menu"
+import { cn } from "@/lib/utils"
 export function ProductCard({
-  album,
-  aspectRatio = 'portrait',
+  product,
+  aspectRatio = "portrait",
   width,
   height,
   className,
   ...props
 }) {
   return (
-    <div className={cn('space-y-3', className)} {...props}>
+    <div className={cn("space-y-3", className)} {...props}>
       <ContextMenu>
         <ContextMenuTrigger>
-          <div className='overflow-hidden rounded-md'>
+          <div className="overflow-hidden rounded-md">
             <img
-              src={album.cover}
+              src={allproducts.model_image}
               width={width}
               height={height}
               className={cn(
-                'h-auto w-auto object-cover transition-all hover:scale-105',
-                aspectRatio === 'portrait' ? 'aspect-[3/4]' : 'aspect-square',
+                "h-auto w-auto object-cover transition-all hover:scale-105",
+                aspectRatio === "portrait" ? "aspect-[3/4]" : "aspect-square"
               )}
             />
           </div>
-          <div className='ml-auto mr-4'>
-          <Button
-            onClick={() => {
-              Toast('This is a toast')
-            }}
-          >
-            <PlusCircle className='mr-2 h-4 w-4' />
-            Add music
-          </Button>
-        </div>
         </ContextMenuTrigger>
-        {/* <ContextMenuContent className='w-40'>
-          <ContextMenuItem>Add to Library</ContextMenuItem>
-          <ContextMenuSub>
-            <ContextMenuSubTrigger>Add to Playlist</ContextMenuSubTrigger>
-            <ContextMenuSubContent className='w-48'>
-              <ContextMenuItem>
-                <PlusCircle className='mr-2 h-4 w-4' />
-                New Playlist
-              </ContextMenuItem>
-              <ContextMenuSeparator />
-              {playlists.map((playlist) => (
-                <ContextMenuItem key={playlist}>
-                  <ListMusic className='mr-2 h-4 w-4' /> {playlist}
-                </ContextMenuItem>
-              ))}
-            </ContextMenuSubContent>
-          </ContextMenuSub>
-          <ContextMenuSeparator />
-          <ContextMenuItem>Play Next</ContextMenuItem>
-          <ContextMenuItem>Play Later</ContextMenuItem>
-          <ContextMenuItem>Create Station</ContextMenuItem>
-          <ContextMenuSeparator />
-          <ContextMenuItem>Like</ContextMenuItem>
-          <ContextMenuItem>Share</ContextMenuItem>
-        </ContextMenuContent> */}
-      </ContextMenu> 
-      <div className='space-y-1 text-sm'>
-        <h3 className='font-medium leading-none'>{product.name}</h3>
-        <p className='text-xs text-muted-foreground'>{product.model}}</p>
+        <ContextMenuContent className="w-40">
+          <ContextMenuItem>
+            <Button
+            onClick={() => {
+            }}>
+            <BsPlusCircle className="mr-2 h-4 w-4" />
+            Add to cart
+          </Button></ContextMenuItem>
+        </ContextMenuContent>
+      </ContextMenu>
+      <div className="space-y-1 text-sm">
+        <h3 className="font-medium leading-none">{allproducts.model_name}</h3>
+        <p className="text-xs text-muted-foreground">{allproducts.model_number}</p>
       </div>
     </div>
   )
