@@ -12,6 +12,7 @@ import AppearanceForm from './components/Forms/appearance/AppearanceForm';
 import NotificationsForm from './components/Forms/notifications/NotificationsForm';
 import ProductPage from './components/ProductsPage/ProductPage.jsx';
 import ProductTab from './components/ProductsPage/ProductTab';
+import ProductCard from './components/ProductsPage/ProductCard';
 // import { ThemeProvider } from './components/theme/ThemeProvider.jsx';
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
       
       <Route path="/pg" Component={ProductPage} />
       <Route path="/pt" Component={ProductTab} />
+      <Route path="/pc" Component={ProductCard} />
 
 
 
