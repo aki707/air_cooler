@@ -8,7 +8,7 @@ import {
     Search,
     Users,
   } from "lucide-react"
-  
+  import {NavLink} from 'react-router-dom'
   import { Button } from "@/components/ui/button"
 
   import {
@@ -36,7 +36,7 @@ return(
             <span className="sr-only">Acme Inc</span>
           </a>
           <a
-            href="#"
+            href="\dashboard"
             className="text-foreground transition-colors hover:text-foreground"
           >
             Dashboard
@@ -48,68 +48,18 @@ return(
             Orders
           </a>
           <a
-            href="#"
+            href="/pg"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
             Products
           </a>
           <a
-            href="#"
+            href="/settings"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
             Settings
           </a>
         </nav>
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button
-              variant="outline"
-              size="icon"
-              className="shrink-0 md:hidden"
-            >
-              <Menu className="h-5 w-5" />
-              <span className="sr-only">Toggle navigation menu</span>
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="left">
-            <nav className="grid gap-6 text-lg font-medium">
-              <a
-                href="#"
-                className="flex items-center gap-2 text-lg font-semibold"
-              >
-                <Package2 className="h-6 w-6" />
-                <span className="sr-only">Acme Inc</span>
-              </a>
-              <a href="#" className="hover:text-foreground">
-                Dashboard
-              </a>
-              <a
-                href="#"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Orders
-              </a>
-              <a
-                href="#"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Products
-              </a>
-              <a
-                href="#"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Customers
-              </a>
-              <a
-                href="#"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Analytics
-              </a>
-            </nav>
-          </SheetContent>
-        </Sheet>
         <div className="flex w-full items-center gap-4 md:ml-auto md:gap-2 lg:gap-4">
           <form className="ml-auto flex-1 sm:flex-initial">
             <div className="relative">

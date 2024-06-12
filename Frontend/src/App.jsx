@@ -37,8 +37,8 @@ function App() {
 
       
       <Route path="/pg" Component={ProductPage} />
-      <Route path="/pt" Component={ProductTab} />
-      <Route path="/pc" Component={ProductCard} />
+      {/* <Route path="/pt" Component={ProductTab} />
+      <Route path="/pc" Component={ProductCard} /> */}
 
 
 
