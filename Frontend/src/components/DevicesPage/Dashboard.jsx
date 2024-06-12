@@ -1,6 +1,6 @@
 import {
-  ArrowUpRight,
-  DollarSign,
+ Plus,
+ Search,
 } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -19,11 +19,43 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
+
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+
+import { Input } from "@/components/ui/input"
 import './Dashboard.css';
 import Navbar from "./Navbar"
 import Status from "./Status"
+// import axios from "axios"
+import {useEffect} from 'react'
 
 export default function Dashboard() {
+
+  // useEffect(() => {
+  //   fetchData()
+  // }, []);
+   
+  // const fetchData = async () => {
+  //   try {
+  //     const response = await axios.get('http://127.0.0.1:8000/connect/sensors/');
+  //     // const data = await response.json();
+  //     console.log(response);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
+
+
+
+
   return (
     
     <div className="flex flex-col min-h-screen w-full">
@@ -43,12 +75,43 @@ export default function Dashboard() {
                   All available devices in your account
                 </CardDescription>
               </div>
+              <Dialog>
+          <DialogTrigger asChild>
               <Button asChild size="sm" className="ml-auto gap-1">
                 <a href="#">
-                  View All
-                  <ArrowUpRight className="h-4 w-4" />
+                <Plus className='mr-2 h-4 w-4' />
+                  Add Device
                 </a>
               </Button>
+              </DialogTrigger>
+
+              <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Add Device</DialogTitle>
+              <DialogDescription>
+                You can find device name on website or on the device itself.
+              </DialogDescription>
+            </DialogHeader>
+            <div className='grid gap-4 py-4'>
+              <div className='grid gap-2'>
+                Device Name
+                <div className="relative">
+              <DialogDescription className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+              <Input
+                type="DropdownMenuSeparatorch"
+                placeholder="Search products..."
+                className="pl-8 sm:w-[300px] md:w-[200px] lg:w-[300px]"
+              />
+            </div>
+                {/* <Label htmlFor='url'>   Device Name</Label> */}
+              </div>
+            </div>
+            <DialogFooter>
+              <Button>Add</Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
+
             </CardHeader>
             <CardContent>
               <Table>
@@ -170,7 +233,7 @@ export default function Dashboard() {
                 Total Electricity Consumption
               </CardTitle>
               
-              <DollarSign className="h-4 w-4 text-muted-foreground" />
+              {/* <DollarSign className="h-4 w-4 text-muted-foreground" /> */}
             </CardHeader>
             <CardContent>
             <div className="readings">
