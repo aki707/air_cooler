@@ -12,13 +12,16 @@ import AppearanceForm from './components/Forms/appearance/AppearanceForm';
 import NotificationsForm from './components/Forms/notifications/NotificationsForm';
 import ProductPage from './components/ProductsPage/ProductPage.jsx';
 import ProductTab from './components/ProductsPage/ProductTab';
+// import { ThemeProvider } from './components/theme/ThemeProvider.jsx';
 
 function App() {
   return (
+    // <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
     <Routes>
       <Route path="/" Component={Loginspage} />
       <Route path="/dashboard" Component={Dashboard} />
-      
+
+  // Setting routing
     <Route path='/settings' Component={SettingsLayout}>
       <Route path='/settings/profile' Component={ProfileForm}/>
       <Route path='/settings/spp' Component={SettingsProfilePage}/>
@@ -39,6 +42,7 @@ function App() {
 
       {/* <Route path='/buy' Component={Buy}/> */}
     </Routes>
+    // </ThemeProvider>
 
   );
 }

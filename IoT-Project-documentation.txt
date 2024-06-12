@@ -45,3 +45,7 @@ Ultra Sonic Sensor- This sensor is used for accurately calculating the water lev
 Arduino ESP32 - Arduino ESP32 has been used as the Arduino board with ESP32 microcontroller as it offers Wi-Fi and Bluetooth connectivity.
 PCB - Programmable Circuit Board has been used to control the Fan speed and Water Pump Speed as per the requirement and response given by web application or android/ iOS application
 LED Display- it is used for showing the current status of temperature, humidity, water level, fan speed and water pump speed
+
+
+admin: aki707
+pass: Aki@123

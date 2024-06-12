@@ -34,7 +34,7 @@ export default function Dashboard() {
         <div className="grid gap-4 md:gap-8 lg:grid-cols-2 xl:grid-cols-3">
        
           <Card
-            className="xl:col-span-2" x-chunk="dashboard-01-chunk-4"
+            className="xl:col-span-2 shadow-lg" x-chunk="dashboard-01-chunk-4"
           >
             <CardHeader className="flex flex-row items-center">
               <div className="grid gap-2">
@@ -162,9 +162,9 @@ export default function Dashboard() {
               </Table>
             </CardContent>
           </Card>
-          <div className="new-card">
-           <div className="nested-1">
-           <Card x-chunk="dashboard-01-chunk-0">
+          <div className="new-card ">
+           <div className="nested-1 ">
+           <Card className="shadow-lg"  x-chunk="dashboard-01-chunk-0">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">
                 Total Electricity Consumption
@@ -183,7 +183,7 @@ export default function Dashboard() {
           </Card>
           </div>
           <div className="nested-2">
-          <Card x-chunk="dashboard-01-chunk-3">
+          <Card className='shadow-lg' x-chunk="dashboard-01-chunk-3">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">
                 Real-Time Environment Data
