@@ -1,20 +1,4 @@
-import {
-  File,
-  Home,
-  LineChart,
-  ListFilter,
-  MoreHorizontal,
-  Package,
-  Package2,
-  PanelLeft,
-  PlusCircle,
-  Search,
-  Settings,
-  ShoppingCart,
-  Users2,
-} from "lucide-react"
-
-import { Badge } from "@/components/ui/badge"
+import {  ListFilter} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -54,7 +38,6 @@ export default function ProductPage() {
           <Tabs defaultValue="all">
             <div className="flex items-center">
             <div className="Search">
-            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
               type="search"
               placeholder="Search..."
@@ -112,13 +95,6 @@ export default function ProductPage() {
                     </DropdownMenuCheckboxItem>
                   </DropdownMenuContent>
                 </DropdownMenu>  */}
-                
-                {/* <Button size="sm" className="h-8 gap-1">
-                  <PlusCircle className="h-3.5 w-3.5" />
-                  <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
-                    Add Product
-                  </span>
-                </Button> */}
               </div>
             </div>
             <TabsContent value="all">
