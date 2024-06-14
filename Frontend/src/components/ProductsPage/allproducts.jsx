@@ -1,4 +1,4 @@
-export default allproducts = [
+export const allproducts = [
     {
       model_name: "React Rendezvous",
       model_number: "Ethan Byte",
