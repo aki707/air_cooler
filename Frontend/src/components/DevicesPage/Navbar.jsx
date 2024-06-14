@@ -42,7 +42,7 @@ return(
             Dashboard
           </a>
           <a
-            href="#"
+            href="/og"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
             Orders
@@ -54,7 +54,7 @@ return(
             Products
           </a>
           <a
-            href="/settings"
+            href="/settings/profile"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
             Settings

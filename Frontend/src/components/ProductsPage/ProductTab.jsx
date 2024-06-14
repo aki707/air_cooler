@@ -10,8 +10,8 @@ export default function ProductTab(){
     <Tabs defaultValue="music" className="h-full space-y-6">
       <TabsContent value="music" className="border-none p-0 outline-none">
         <Separator className="my-4" />
-        <div className="relative" style={{ height: "340px" }}>
-          <ScrollArea style={{  height: "360px" ,width: "1050px", overflowX: "hidden" }}>
+        <div className="relative" style={{ height: "320px" }}>
+          <ScrollArea style={{  height: "345px" ,width: "1050px", overflowX: "hidden" }}>
             <div className="prod">
               <ProductCard />
               <ProductCard />

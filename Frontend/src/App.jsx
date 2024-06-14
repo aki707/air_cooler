@@ -11,10 +11,9 @@ import AccountForm from './components/Forms/account/AccountForm';
 import AppearanceForm from './components/Forms/appearance/AppearanceForm';
 import NotificationsForm from './components/Forms/notifications/NotificationsForm';
 import ProductPage from './components/ProductsPage/ProductPage.jsx';
-import ProductTab from './components/ProductsPage/ProductTab';
-import ProductCard from './components/ProductsPage/ProductCard';
+import OrdersPage from './components/OrdersPage/OrdersPage';
 // import { ThemeProvider } from './components/theme/ThemeProvider.jsx';
-
+import PotentialAD from './components/OrdersPage/PotentialAD';
 function App() {
   return (
     // <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
@@ -37,10 +36,8 @@ function App() {
 
       
       <Route path="/pg" Component={ProductPage} />
-      {/* <Route path="/pt" Component={ProductTab} />
-      <Route path="/pc" Component={ProductCard} /> */}
-
-
+      <Route path="/og" Component={OrdersPage} />
+      <Route path="/pa" Component={PotentialAD} />
 
       {/* <Route path='/buy' Component={Buy}/> */}
     </Routes>

@@ -1,6 +1,6 @@
 .productcard{
     width: 221px;
-    height: 281px;
+    height: 281px;  
     display: flex;
     flex-direction: column;
     /* justify-content: space-between; */
@@ -11,14 +11,14 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     /* margin: 10px;
     padding: 10px; */
-    margin-right: 15px;
-    margin-left: 15px;
+    margin-right: 13px;
+    margin-left: 13px;
     margin-top: 25px;
     padding-top: 10px;
     transition: all 0.3s ease;
 }
 .productcard:hover {
-    transform:scale(1.3);
+    transform:scale(1.2);
 }
 .cartbutton{
     display: inline-flex;

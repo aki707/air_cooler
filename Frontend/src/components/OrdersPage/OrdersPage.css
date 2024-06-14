@@ -1,0 +1,50 @@
+.Ordershead{
+    display: table-cell;
+    opacity: 1;
+    color: rgb(0 0 0);
+    font-weight: 500;
+    vertical-align: middle;
+    text-align: left;
+    height: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 120%;
+    
+    
+}
+.OrdersRow{
+    display: table-row;
+    border-bottom: 1px solid rgb(224 224 224);
+    height: 3rem;
+}
+.OrdersTitle1{
+    float: left;
+    font-size: 200%;
+    font-weight: 600;
+
+}
+.OrdersTitle2{
+    float: right;
+}
+
+.OrdersNav{
+    display: inline-block;
+    justify-content: space-between;
+    margin: 0%;
+    padding: 0%;
+}
+.Description{
+    display: inline-block;
+    justify-content: space-between;
+    margin-top: 1px;
+}
+.OrdersDescription{
+    float: left;
+    font-size: 120%;
+    color: black
+}
+.OrdersFilter{
+    float: right;
+    font-size: 120%;
+    color: black
+}
