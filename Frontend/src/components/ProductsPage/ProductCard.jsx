@@ -1,56 +1,34 @@
-/** @jsxImportSource react */
-import { Button } from "@/components/ui/button.jsx";
-import { BsPlusCircle } from "react-icons/bs"
-import { allproducts } from "./allproducts"
+import * as React from "react"
+
+import { Button } from "@/components/ui/button"
 import {
-  ContextMenu,
-  ContextMenuContent,
-  ContextMenuItem,
-  ContextMenuSeparator,
-  ContextMenuSub,
-  ContextMenuSubContent,
-  ContextMenuSubTrigger,
-  ContextMenuTrigger
-} from "@/components/ui/context-menu"
-import { cn } from "@/lib/utils"
-export function ProductCard({
-  product,
-  aspectRatio = "portrait",
-  width,
-  height,
-  className,
-  ...props
-}) {
+  Card,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card"
+import { Label } from "@/components/ui/label"
+import'./ProductCard.css'
+export default function ProductCard() {
   return (
-    <div className={cn("space-y-3", className)} {...props}>
-      <ContextMenu>
-        <ContextMenuTrigger>
-          <div className="overflow-hidden rounded-md">
-            <img
-              src={allproducts.model_image}
-              width={width}
-              height={height}
-              className={cn(
-                "h-auto w-auto object-cover transition-all hover:scale-105",
-                aspectRatio === "portrait" ? "aspect-[3/4]" : "aspect-square"
-              )}
-            />
-          </div>
-        </ContextMenuTrigger>
-        <ContextMenuContent className="w-40">
-          <ContextMenuItem>
-            <Button
-            onClick={() => {
-            }}>
-            <BsPlusCircle className="mr-2 h-4 w-4" />
-            Add to cart
-          </Button></ContextMenuItem>
-        </ContextMenuContent>
-      </ContextMenu>
-      <div className="space-y-1 text-sm">
-        <h3 className="font-medium leading-none">{allproducts.model_name}</h3>
-        <p className="text-xs text-muted-foreground">{allproducts.model_number}</p>
-      </div>
-    </div>
+    <Card className="productcard">
+      <CardContent >
+        <div>
+          <img src="/Coolernew.jpg" alt="cooler" className="w-full h-40 object-cover" />
+        </div>
+        <div>
+        <div>
+            <h3>Device Name</h3>
+            {/* <Input placeholder="Enter device name" /> */}
+            <h3>Model Number</h3>
+            {/* <Input placeholder="Enter model number" /> */}
+        </div>
+        <div className="cartbutton">
+          <h4 className="price">  Price</h4>
+          &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;    
+        <Button variant="outline" className="btn">Add to Cart</Button>
+        </div>
+        </div>
+      </CardContent>
+    </Card>
   )
 }

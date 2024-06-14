@@ -9,7 +9,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
-export default function Loginspage() {
+export default function SignUp() {
   return (
     <Card className="mx-auto max-w-sm shadow-lg">
       <CardHeader>
@@ -52,7 +52,7 @@ export default function Loginspage() {
         </div>
         <div className="mt-4 text-center text-sm">
           Already have an account?{" "}
-          <a href="#" className="underline">
+          <a href="/" className="underline">
             Sign in
           </a>
         </div>

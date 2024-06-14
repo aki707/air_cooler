@@ -1,0 +1,17 @@
+
+.ad{
+    display: flex ;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.adPrice{
+    font-size: 120%;
+    color: black;
+    margin-left: 1rem;
+    padding-top: 80px;
+}
+.pricetag{
+    padding-top: 10px;
+}
