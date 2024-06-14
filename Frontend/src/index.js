@@ -7,7 +7,7 @@ import App from "./pages/Layout";
 // import NoPage from "./pages/NoPage";
 import Dashboard from './components/DevicesPage/Dashboard.jsx';
 import Navbar from './components/DevicesPage/Navbar.jsx';
-import Loginspage from './components/Login/Loginspage.jsx';
+import Loginspage from './components/Login/SignUp.jsx/index.js';
 
 export default function App() {
   return (

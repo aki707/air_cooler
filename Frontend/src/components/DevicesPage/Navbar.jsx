@@ -81,10 +81,16 @@ return(
             <DropdownMenuContent align="end">
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Settings</DropdownMenuItem>
               <DropdownMenuItem>Support</DropdownMenuItem>
-              <DropdownMenuSeparator />
               <DropdownMenuItem>Logout</DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuLabel>Other Profiles</DropdownMenuLabel>
+              <DropdownMenuItem>Account 1</DropdownMenuItem>
+              <DropdownMenuItem>Account 2</DropdownMenuItem>
+              <DropdownMenuItem>Account 3</DropdownMenuItem>
+              <DropdownMenuItem>
+                <a href="/">Add a Account </a>
+                </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
