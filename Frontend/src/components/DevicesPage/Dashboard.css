@@ -13,3 +13,19 @@
     margin-bottom: 10px;
 }
     
+.threedots{
+    font-size: large;
+    font-weight: bold;
+    height: 1rem;
+    width: 5rem;
+    border: none;
+}
+.threedottext{
+    padding-bottom: 0.5rem;
+    font-size: large;
+    font-weight: bold;
+}
+
+.something{
+    text-align: right;
+}

@@ -8,6 +8,15 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import {
  Plus,
  Search,
 } from "lucide-react"
@@ -201,7 +210,8 @@ const handleEditChange = (e) => {
                     <TableHead className="hidden xl:table-column">
                       Date
                     </TableHead>
-                    <TableHead className="text-right">Status</TableHead>
+                    <TableHead className= "text-right">Status</TableHead>
+                    <TableHead className=" hidden text-right">Status</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody
@@ -233,20 +243,24 @@ const handleEditChange = (e) => {
                     <TableCell className="hidden md:table-cell lg:hidden xl:table-column">
                       2023-06-23
                     </TableCell>
-                    <TableCell className="text-right">         <DropdownMenu>
+                    <TableCell> 
+                      <Status />
+                    </TableCell>
+                    <TableCell className="text-right">     
+                  <DropdownMenu className=" click">
                   <DropdownMenuTrigger asChild>
-                    <Button variant="outline" className="threedots">
+                    <Button variant="secondary" className="threedots">
                       <h6 className="threedottext">
                         ...
                       </h6>
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end">
+                  <DropdownMenuContent className="min-w-[4rem]">
                     
                     <div>
                       <Dialog>
                         <DialogTrigger asChild>
-                          <Button asChild size="sm" className="ml-auto gap-1" onClick={()=>setEditText(device)}>
+                          <Button asChild size="sm" className="ml-auto gap-1 px-5 bg-transparent text-black font-normal" onClick={()=>setEditText(device)}>
                             <a href="#">
                               Edit
                             </a>
@@ -280,6 +294,7 @@ const handleEditChange = (e) => {
                           </div>
                           <DialogFooter>
                             <Button onClick={()=> handleEdit(editText.id, editText)}>
+                          
                               Update
                             </Button>
                           </DialogFooter>
@@ -290,7 +305,7 @@ const handleEditChange = (e) => {
                     <div>
                     <Dialog>
                         <DialogTrigger asChild>
-                          <Button asChild size="sm" className="ml-auto gap-1">
+                          <Button asChild size="sm" className="ml-auto gap-1 bg-transparent text-black font-normal">
                             <a href="#">
                               Delete
                             </a>
