@@ -76,11 +76,36 @@ export default function Dashboard() {
   const postDevice = async () => {
     try {
       await axios.post('http://127.0.0.1:8000/connect/sensors/', newDevice);
-  
+      fetchData()
     } catch (error) {
       console.log(error);
     }
   }
+
+
+// delete function
+const handleDelete = async (id) => {
+  try{
+  await axios.delete('http://127.0.0.1:8000/connect/sensors/4{id}/')
+  const newList = data.filter((device) => device.id !== id)
+  setData(newList)
+  }
+  catch (error) {
+    console.log(error);
+  }
+}
+
+// update function
+const handleEdit = async (id, value) => {
+  try{
+    const response = axios.patch('http://127.0.0.1:8000/connect/sensors/4{id}/', value)
+    const newDevice = data.map(device => data.id === id ? response.data : device)
+    setData(newDevice)
+  }
+  catch (error) {
+    console.log(error);
+  }
+}
 
 
   return (
