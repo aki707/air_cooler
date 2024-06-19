@@ -224,9 +224,10 @@ const handleEdit = async (id, value) => {
                     <TableCell className="hidden md:table-cell lg:hidden xl:table-column">
                       2023-06-23
                     </TableCell>
-                    <TableCell className="text-right">     <DropdownMenu>
+                    <TableCell className="text-right">     
+                  <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button className="threedots">
+                    <Button variant="secondary" className="threedots">
                       <h6 className="threedottext">
                         ...
                       </h6>
