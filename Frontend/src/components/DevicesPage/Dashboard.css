@@ -13,3 +13,13 @@
     margin-bottom: 10px;
 }
     
+.threedots{
+    font-size: large;
+    height: 1rem;
+    width: 5rem;
+    border: none;
+}
+.threedottext{
+    padding-bottom: 0.5rem;
+
+}
