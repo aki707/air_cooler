@@ -1,4 +1,13 @@
 import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import {
  Plus,
  Search,
 } from "lucide-react"
@@ -43,6 +52,9 @@ export default function Dashboard() {
 
   const [data, setData] = useState("")
   const [isLoading, setLoading] = useState(true)
+  const [editText, setEditText] = useState({
+    'name': ''
+  })
 
   useEffect(() => {
     fetchData()
@@ -86,20 +98,20 @@ export default function Dashboard() {
 
 // delete function
 const handleDelete = async (id) => {
-  try{
-  await axios.delete('http://127.0.0.1:8000/connect/sensors/4{id}/')
-  const newList = data.filter((device) => device.id !== id)
-  setData(newList)
-  }
-  catch (error) {
+  try {
+    // Correct usage of template literals for embedding the id
+    await axios.delete(`http://127.0.0.1:8000/connect/sensors/${id}/`);
+    const newList = data.filter((device) => device.id !== id);
+    setData(newList);
+  } catch (error) {
     console.log(error);
   }
-}
+};
 
 // update function
 const handleEdit = async (id, value) => {
   try{
-    const response = axios.patch('http://127.0.0.1:8000/connect/sensors/4{id}/', value)
+    const response = axios.patch(`http://127.0.0.1:8000/connect/sensors/${id}/`, value)
     const newDevice = data.map(device => data.id === id ? response.data : device)
     setData(newDevice)
   }
@@ -107,6 +119,12 @@ const handleEdit = async (id, value) => {
     console.log(error);
   }
 }
+
+const handleEditChange = (e) => {
+  setEditText(prev => ({
+    ...prev,
+    'name': e.target.value
+  }))}
 
 
   return (
@@ -195,7 +213,7 @@ const handleEdit = async (id, value) => {
                   <>
                   {data.map((device, index) => {
                     return( 
-                  <TableRow>
+                  <TableRow key={device.id}>
                     <TableCell>
                       <div className="font-medium">
                         {device.name}
@@ -215,7 +233,91 @@ const handleEdit = async (id, value) => {
                     <TableCell className="hidden md:table-cell lg:hidden xl:table-column">
                       2023-06-23
                     </TableCell>
-                    <TableCell className="text-right"> <Options /> </TableCell>
+                    <TableCell className="text-right">         <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="outline" className="threedots">
+                      <h6 className="threedottext">
+                        ...
+                      </h6>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end">
+                    
+                    <div>
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <Button asChild size="sm" className="ml-auto gap-1" onClick={()=>setEditText(device)}>
+                            <a href="#">
+                              Edit
+                            </a>
+                          </Button>
+                        </DialogTrigger>
+
+                        <DialogContent>
+                          <DialogHeader>
+                            <DialogTitle>
+                              Edit Device Name
+                            </DialogTitle>
+                            {/* <DialogDescription>
+                              You can find device name on website or on the device itself.
+                            </DialogDescription> */}
+                          </DialogHeader>
+                          <div className='grid gap-4 py-4'>
+                            {/* <div className='grid gap-2'>
+                               New Device Name */}
+                              <div className="relative">
+                                  <DialogDescription className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+                                    <Input
+                                    type="DropdownMenuSeparatorch"
+                                    placeholder="Enter New Name"
+                                    className="pl-8 sm:w-[300px] md:w-[200px] lg:w-[300px]"
+                                    value = {editText.name}
+                                    onChange={handleEditChange}
+                                    />
+                              </div>
+                {/* <Label htmlFor='url'>   Device Name</Label> */}
+                            {/* </div> */}
+                          </div>
+                          <DialogFooter>
+                            <Button onClick={()=> handleEdit(editText.id, editText)}>
+                              Update
+                            </Button>
+                          </DialogFooter>
+                        </DialogContent>
+                      </Dialog>
+
+                    </div>
+                    <div>
+                    <Dialog>
+                        <DialogTrigger asChild>
+                          <Button asChild size="sm" className="ml-auto gap-1">
+                            <a href="#">
+                              Delete
+                            </a>
+                          </Button>
+                        </DialogTrigger>
+
+                        <DialogContent>
+                          <div className='grid gap-4 py-4'>
+                            <div className='grid gap-2'>
+                            Are You Sure You Want To Remove This Device?
+                {/* <Label htmlFor='url'>   Device Name</Label> */}
+                            </div>
+                          </div>
+                          <DialogFooter>
+                            <Button  onClick={()=> handleDelete(device.id)}>
+                              Delete
+                            </Button>
+                            <Button>
+                              Cancel
+                            </Button>
+                          </DialogFooter>
+                        </DialogContent>
+                      </Dialog>
+
+                    </div>
+                  </DropdownMenuContent>
+                </DropdownMenu> </TableCell>
                   </TableRow>
      
                 )  })}</>}

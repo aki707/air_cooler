@@ -21,7 +21,22 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import './Options.css'
-export default function Options() {
+import axios from "axios"
+
+
+
+export default function Options(data, setData, isLoading) {
+  // delete function
+const handleDelete = async (id) => {
+  try{
+  await axios.delete('http://127.0.0.1:8000/connect/sensors/{id}/')
+  const newList = data.filter((device) => device.id !== id)
+  setData(newList)
+  }
+  catch (error) {
+    console.log(error);
+  }
+}
     return(
             <div className="options">
                 <DropdownMenu>
@@ -94,7 +109,7 @@ export default function Options() {
                             </div>
                           </div>
                           <DialogFooter>
-                            <Button>
+                            <Button  onClick={()=> handleDelete(data.id)}>
                               Delete
                             </Button>
                             <Button>
