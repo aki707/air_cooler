@@ -34,27 +34,79 @@ import { Input } from "@/components/ui/input"
 import './Dashboard.css';
 import Navbar from "./Navbar"
 import Status from "./Status"
-// import axios from "axios"
-import {useEffect} from 'react'
+import axios from "axios"
+import {useEffect, useState} from 'react'
 import Options from "./Options"
+import { set } from "date-fns"
 
 export default function Dashboard() {
 
-  // useEffect(() => {
-  //   fetchData()
-  // }, []);
+  const [data, setData] = useState("")
+  const [isLoading, setLoading] = useState(true)
+
+  useEffect(() => {
+    fetchData()
+    console.log(data);
+
+  }, []);
    
-  // const fetchData = async () => {
-  //   try {
-  //     const response = await axios.get('http://127.0.0.1:8000/connect/sensors/');
-  //     // const data = await response.json();
-  //     console.log(response);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // }
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('http://127.0.0.1:8000/connect/sensors/');
+      // const data = await response.json();
+      setData(response.data)
+      setLoading(false)
+
+    } catch (error) {
+      console.error(error);
+    }
+  }
+// new device add function
+  const [newDevice, setNewDevice] = useState({
+    'name': '',
+  })
+
+  const handleChange = (e) => {
+    setNewDevice(prev => ({
+      ...prev,
+      'name': e.target.value
+    }))
+    console.log(newDevice);
+  }
+
+  const postDevice = async () => {
+    try {
+      await axios.post('http://127.0.0.1:8000/connect/sensors/', newDevice);
+      fetchData()
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
 
+// delete function
+const handleDelete = async (id) => {
+  try{
+  await axios.delete('http://127.0.0.1:8000/connect/sensors/4{id}/')
+  const newList = data.filter((device) => device.id !== id)
+  setData(newList)
+  }
+  catch (error) {
+    console.log(error);
+  }
+}
+
+// update function
+const handleEdit = async (id, value) => {
+  try{
+    const response = axios.patch('http://127.0.0.1:8000/connect/sensors/4{id}/', value)
+    const newDevice = data.map(device => data.id === id ? response.data : device)
+    setData(newDevice)
+  }
+  catch (error) {
+    console.log(error);
+  }
+}
 
 
   return (
@@ -102,13 +154,16 @@ export default function Dashboard() {
                 type="DropdownMenuSeparatorch"
                 placeholder="Search products..."
                 className="pl-8 sm:w-[300px] md:w-[200px] lg:w-[300px]"
+                onChange={handleChange}
+                value={newDevice.name}
               />
+              
             </div>
                 {/* <Label htmlFor='url'>   Device Name</Label> */}
               </div>
             </div>
             <DialogFooter>
-              <Button>Add</Button>
+              <Button onClick = {postDevice}>Add</Button>
             </DialogFooter>
           </DialogContent>
         </Dialog>
@@ -131,11 +186,19 @@ export default function Dashboard() {
                     <TableHead className="text-right">Status</TableHead>
                   </TableRow>
                 </TableHeader>
-                <TableBody>
+                <TableBody
+                data={data}
+                setData={setData}
+                isLoading={isLoading}
+                >
+                  {isLoading ? <div>Is Loading..</div>:
+                  <>
+                  {data.map((device, index) => {
+                    return( 
                   <TableRow>
                     <TableCell>
                       <div className="font-medium">
-                        Device_1_Name
+                        {device.name}
                         </div>
                       <div className="hidden text-sm text-muted-foreground md:inline">
                         Device_1_model_number
@@ -154,74 +217,8 @@ export default function Dashboard() {
                     </TableCell>
                     <TableCell className="text-right"> <Options /> </TableCell>
                   </TableRow>
-                  <TableRow>
-                    <TableCell>
-                      <div className="font-medium">
-                      Device_2_Name
-                      </div>
-                      <div className="hidden text-sm text-muted-foreground md:inline">
-                      Device_2_model_number
-                      </div>
-                    </TableCell>
-                    <TableCell className="hidden xl:table-column">
-                      Refund
-                    </TableCell>
-                    <TableCell className="hidden xl:table-column">
-                      <Badge className="text-xs" variant="outline">
-                        Declined
-                      </Badge>
-                    </TableCell>
-                    <TableCell className="hidden md:table-cell lg:hidden xl:table-column">
-                      2023-06-24
-                    </TableCell>
-                    <TableCell className="text-right">
-                    <Options />
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>
-                      <div className="font-medium">
-                      Device_3_Name
-                      </div>
-                      <div className="hidden text-sm text-muted-foreground md:inline">
-                      Device_3_model_number
-                      </div>
-                    </TableCell>
-                    <TableCell className="hidden xl:table-column">
-                      Subscription
-                    </TableCell>
-                    <TableCell className="hidden xl:table-column">
-                      <Badge className="text-xs" variant="outline">
-                        Approved
-                      </Badge>
-                    </TableCell>
-                    <TableCell className="hidden md:table-cell lg:hidden xl:table-column">
-                      2023-06-25
-                    </TableCell>
-                    <TableCell className="text-right"><Options /></TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>
-                      <div className="font-medium">
-                      Device_4_Name
-                      </div>
-                      <div className="hidden text-sm text-muted-foreground md:inline">
-                      Device_4_model_number
-                      </div>
-                    </TableCell>
-                    <TableCell className="hidden xl:table-column">
-                      Sale
-                    </TableCell>
-                    <TableCell className="hidden xl:table-column">
-                      <Badge className="text-xs" variant="outline">
-                        Approved
-                      </Badge>
-                    </TableCell>
-                    <TableCell className="hidden md:table-cell lg:hidden xl:table-column">
-                      2023-06-26
-                    </TableCell>
-                    <TableCell className="text-right"><Options /></TableCell>
-                  </TableRow>
+     
+                )  })}</>}
                 </TableBody>
               </Table>
             </CardContent>
