@@ -36,6 +36,7 @@ import Navbar from "./Navbar"
 import Status from "./Status"
 // import axios from "axios"
 import {useEffect} from 'react'
+import Options from "./Options"
 
 export default function Dashboard() {
 
@@ -151,7 +152,7 @@ export default function Dashboard() {
                     <TableCell className="hidden md:table-cell lg:hidden xl:table-column">
                       2023-06-23
                     </TableCell>
-                    <TableCell className="text-right"> <Status /> </TableCell>
+                    <TableCell className="text-right"> <Options /> </TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>
@@ -174,7 +175,7 @@ export default function Dashboard() {
                       2023-06-24
                     </TableCell>
                     <TableCell className="text-right">
-                    <Status />
+                    <Options />
                     </TableCell>
                   </TableRow>
                   <TableRow>
@@ -197,7 +198,7 @@ export default function Dashboard() {
                     <TableCell className="hidden md:table-cell lg:hidden xl:table-column">
                       2023-06-25
                     </TableCell>
-                    <TableCell className="text-right"><Status /></TableCell>
+                    <TableCell className="text-right"><Options /></TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>
@@ -219,7 +220,7 @@ export default function Dashboard() {
                     <TableCell className="hidden md:table-cell lg:hidden xl:table-column">
                       2023-06-26
                     </TableCell>
-                    <TableCell className="text-right"><Status /></TableCell>
+                    <TableCell className="text-right"><Options /></TableCell>
                   </TableRow>
                 </TableBody>
               </Table>
