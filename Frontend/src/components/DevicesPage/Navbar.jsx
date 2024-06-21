@@ -28,37 +28,32 @@ return(
 <div className="Navbar">
     <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
         <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
-          <a
-            href="#"
+          <NavLink to="#"
             className="flex items-center gap-2 text-lg font-semibold md:text-base"
           >
             <Package2 className="h-6 w-6" />
             <span className="sr-only">Acme Inc</span>
-          </a>
-          <a
-            href="\dashboard"
+          </NavLink>
+          <NavLink to="/dashboard"
             className="text-foreground transition-colors hover:text-foreground"
           >
             Dashboard
-          </a>
-          <a
-            href="/og"
+          </NavLink>
+          <NavLink to="/og"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
             Orders
-          </a>
-          <a
-            href="/pg"
+          </NavLink>
+          <NavLink to="/pg"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
             Products
-          </a>
-          <a
-            href="/settings/profile"
+          </NavLink>
+          <NavLink to="/settings/profile"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
             Settings
-          </a>
+          </NavLink>
         </nav>
         <div className="flex w-full items-center gap-4 md:ml-auto md:gap-2 lg:gap-4">
           <form className="ml-auto flex-1 sm:flex-initial">
