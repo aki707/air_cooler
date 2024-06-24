@@ -15,6 +15,7 @@ import OrdersPage from './components/OrdersPage/OrdersPage';
 // import { ThemeProvider } from './components/theme/ThemeProvider.jsx';
 import PotentialAD from './components/OrdersPage/PotentialAD';
 import Signin from './components/Login/Signin.jsx';
+import ControlPage from './components/ControlPage/ControlPage';
 function App() {
   return (
     // <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
@@ -39,7 +40,7 @@ function App() {
       
       <Route path="/pg" Component={ProductPage} />
       <Route path="/og" Component={OrdersPage} />
-      <Route path="/pa" Component={PotentialAD} />
+      <Route path="/cp" Component={ControlPage} />
 
       {/* <Route path='/buy' Component={Buy}/> */}
     </Routes>
