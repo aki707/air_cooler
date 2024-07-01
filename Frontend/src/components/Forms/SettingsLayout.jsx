@@ -26,10 +26,10 @@ const sidebarNavItems = [
     title: "Notifications",
     href: "notifications"
   },
-  {
-    title: "Display",
-    href: "display"
-  }
+  // {
+  //   title: "Display",
+  //   href: "display"
+  // }
 ]
 
 export default function SettingsLayout() {

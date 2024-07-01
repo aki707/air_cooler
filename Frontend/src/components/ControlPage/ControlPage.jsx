@@ -10,7 +10,7 @@ import {
     CardTitle,
   } from "@/components/ui/card"
   import DeviceName from "./DeviceName";
-
+import Adjustable from "./Adjustable";
 export default function ControlPage() {
     return (
 
@@ -24,9 +24,7 @@ export default function ControlPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                 
-                    {/* <MachineReadings />
-                    <Modes /> */}
+                 <Adjustable />
                 </CardContent>
                 <CardFooter>
                   <div className="text-xs text-muted-foreground">
