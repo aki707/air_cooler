@@ -209,7 +209,10 @@ export default function AccountForm() {
             </FormItem>
           )}
         />
+        <div className="flex justify-between">
         <Button type="submit">Update account</Button>
+        <Button type="submit">DELETE account</Button>
+        </div>      
       </form>
     </Form>
   )
