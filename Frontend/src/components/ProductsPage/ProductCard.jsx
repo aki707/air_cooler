@@ -25,7 +25,9 @@ export default function ProductCard() {
         <div className="cartbutton">
           <h4 className="price">  Price</h4>
           &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;    
-        <Button variant="outline" className="btn">Add to Cart</Button>
+        <Button variant="darkOutlined" className="btn">
+        <img src="/addcart.png" alt="cooler" className="w-4 h-4 object-cover" />
+        </Button>
         </div>
         </div>
       </CardContent>
