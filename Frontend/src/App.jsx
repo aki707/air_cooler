@@ -15,9 +15,16 @@ import OrdersPage from './components/OrdersPage/OrdersPage';
 // import { ThemeProvider } from './components/theme/ThemeProvider.jsx';
 import PotentialAD from './components/OrdersPage/PotentialAD';
 import Signin from './components/Login/Signin.jsx';
+<<<<<<< HEAD
 import WebSocketComponent from './components/webscoket/webSocketComponent';
 
 
+=======
+import ControlPage from './components/ControlPage/ControlPage';
+import WaterLevelSlider from './components/ControlPage/WaterLevelSlider';
+import FanSlider from './components/ControlPage/FanSlider';
+import Adjustable from './components/ControlPage/Adjustable';
+>>>>>>> a6d913a2c9eb3e3696a356dc3367553f8e5f8641
 function App() {
   return (
     // <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
@@ -42,11 +49,16 @@ function App() {
       
       <Route path="/pg" Component={ProductPage} />
       <Route path="/og" Component={OrdersPage} />
+<<<<<<< HEAD
       <Route path="/pa" Component={PotentialAD} />
 
       <Route path="/ws" Component={WebSocketComponent} />
 
 
+=======
+      <Route path="/cp" Component={ControlPage} />
+      <Route path="/sd" Component={Adjustable} />
+>>>>>>> a6d913a2c9eb3e3696a356dc3367553f8e5f8641
       {/* <Route path='/buy' Component={Buy}/> */}
     </Routes>
     // </ThemeProvider>
