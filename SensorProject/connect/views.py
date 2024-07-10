@@ -1,3 +1,4 @@
+# import json
 from django.shortcuts import render,redirect
 from rest_framework import viewsets
 from . import serializers
@@ -5,8 +6,11 @@ from . import models
 from django.http import JsonResponse
 import requests
 from django.contrib.auth.models import User
+from django.http import HttpResponse, JsonResponse
+# from django.views.decorators.csrf import csrf_exempt
 
-ESP32_IP = 'http://192.168.1.101'  # Replace with the IP address of your ESP32
+
+ESP32_IP = 'http://192.168.1.114'  # Replace with the IP address of your ESP32
 
 
 
@@ -34,9 +38,6 @@ def fetch_sensor_values(request):
 
     return JsonResponse(result)
     
-
-
-
 
 
 def index(request):
