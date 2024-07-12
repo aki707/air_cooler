@@ -64,3 +64,8 @@ def register_page(request):
         return redirect('/register/')
         
     return render(request, 'register.html')
+
+
+class ProductsViewSet(viewsets.ModelViewSet):
+    queryset = models.Products.objects.all()
+    serializer_class = serializers.ProductsSerializer
