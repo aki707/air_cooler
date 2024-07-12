@@ -14,6 +14,9 @@ import ProductPage from './components/ProductsPage/ProductPage.jsx';
 import OrdersPage from './components/OrdersPage/OrdersPage';
 // import { ThemeProvider } from './components/theme/ThemeProvider.jsx';
 import Signin from './components/Login/Signin.jsx';
+import WebSocketComponent from './components/webscoket/webSocketComponent';
+
+
 import ControlPage from './components/ControlPage/ControlPage';
 import Adjustable from './components/ControlPage/Adjustable';
 import Cart from './components/CartPage/Cart';
@@ -42,6 +45,11 @@ function App() {
       <Route path="/pg" Component={ProductPage} />
       <Route path="/og" Component={OrdersPage} />
       <Route path="/cp" Component={Cart} />
+
+      <Route path="/ws" Component={WebSocketComponent} />
+
+
+      <Route path="/cp" Component={ControlPage} />
       <Route path="/sd" Component={Adjustable} />
       {/* <Route path='/buy' Component={Buy}/> */}
     </Routes>
