@@ -1,9 +1,10 @@
 import FanSlider from "./FanSlider";
 import WaterLevelSlider from "./WaterLevelSlider";
+import "./Adjustable.css";
 
 export default function Adjustable() {
     return(
-        <div className="flex flex-row gap-4">
+        <div className="Adjustable">
             <FanSlider />
             <WaterLevelSlider />
         </div>

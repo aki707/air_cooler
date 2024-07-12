@@ -44,7 +44,7 @@ function App() {
       
       <Route path="/pg" Component={ProductPage} />
       <Route path="/og" Component={OrdersPage} />
-      <Route path="/cp" Component={Cart} />
+      <Route path="/ct" Component={Cart} />
 
       <Route path="/ws" Component={WebSocketComponent} />
 
