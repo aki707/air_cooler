@@ -10,6 +10,57 @@ import { useState } from "react"
 import'./ProductCard.css'
 
 export default function ProductCard( {product}) {
+  const [data, setData] = useState("")
+  const [isLoading, setLoading] = useState(true)
+  const [editText, setEditText] = useState({
+    'name': ''
+  })
+  const [editNumber, setEditNumber] = useState({
+    '12345678': ''
+  })
+  const [editPrice, setEditPrice] = useState({
+    '999': ''
+  })
+
+  useEffect(() => {
+    fetchData()
+    console.log(data);
+
+  }, []);
+   
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('http://127.0.0.1:8000/connect/sensors/');
+      // const data = await response.json();
+      setData(response.data)
+      setLoading(false)
+
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  const [newProduct, setNewDProduct] = useState({
+    'name': '',
+    '12345678': '',
+    '999': '',
+  })
+    const handleChange = (e) => {
+      setNewDevice(prev => ({
+        ...prev,
+        'name': e.target.value,
+        '12345678': e.target.value,
+        '999': e.target.value
+      }))
+      console.log(newProduct);
+    }
+    const postDevice = async () => {
+      try {
+        await axios.post('http://127.0.0.1:8000/connect/products/', newProduct);
+        fetchData()
+      } catch (error) {
+        console.log(error);
+      }
+    }
   const { addToCart, cartItems } = useCart()
    const [quantity, setQuantity] = useState(0)
 
@@ -48,5 +99,6 @@ export default function ProductCard( {product}) {
         </div>
       </CardContent>
     </Card>
+    
   )
 }

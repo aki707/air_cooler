@@ -1,7 +1,8 @@
 .Adjustable {
     display: flex;
     flex-direction: row;
-    gap: 1rem
+    gap: 1rem;
+    justify-content: space-around;
 }
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
