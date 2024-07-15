@@ -1,5 +1,6 @@
 import {  ListFilter} from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { NavLink } from "react-router-dom"
 import {
   Card,
   CardContent,
@@ -23,10 +24,14 @@ import {
   TabsContent,
   TabsList,
 } from "@/components/ui/tabs"
-
+import ReactDOM from 'react-dom';
+import CartIcon from '../CartPage/CartIcon';
+import React from 'react';
+import Cart from "../CartPage/Cart"
 import './ProductPage.css'
 import Navbar from "../DevicesPage/Navbar"
 import ProductTab from "./ProductTab"
+import Cartnum from "../CartPage/CartIcon"
 export default function ProductPage() {
   return (
     <div className="flex min-h-screen w-full flex-col bg-muted/40">
@@ -100,9 +105,18 @@ export default function ProductPage() {
             <TabsContent value="all">
               <Card x-chunk="dashboard-06-chunk-0">
                 <CardHeader>
-                  <CardTitle>All Products</CardTitle>
+                  <CardTitle>
+                    <div className="cart">
+                      All Products
+                      {/* <NavLink to="#"> <CartIcon /> </NavLink> */}
+                      < Cart />
+                    </div>
+                  </CardTitle>
                   <CardDescription>
+                    <div>
                     Here you can view all the products
+                    {/* <button> Cart </button> */}
+                    </div>
                   </CardDescription>
                   <ProductTab />
                 </CardHeader>

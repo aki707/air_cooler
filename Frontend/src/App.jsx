@@ -13,7 +13,6 @@ import NotificationsForm from './components/Forms/notifications/NotificationsFor
 import ProductPage from './components/ProductsPage/ProductPage.jsx';
 import OrdersPage from './components/OrdersPage/OrdersPage';
 // import { ThemeProvider } from './components/theme/ThemeProvider.jsx';
-import PotentialAD from './components/OrdersPage/PotentialAD';
 import Signin from './components/Login/Signin.jsx';
 import ControlPage1 from './components/ControlPage/ControlPage1';
 import WaterLevelSlider from './components/ControlPage/WaterLevelSlider';
@@ -21,6 +20,12 @@ import FanSlider from './components/ControlPage/FanSlider';
 import Adjustable from './components/ControlPage/Adjustable';
 
 
+import WebSocketComponent from './components/webscoket/webSocketComponent';
+
+
+import ControlPage from './components/ControlPage/ControlPage';
+import Adjustable from './components/ControlPage/Adjustable';
+import Cart from './components/CartPage/Cart';
 function App() {
   return (
     // <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
@@ -46,6 +51,12 @@ function App() {
       <Route path="/pg" Component={ProductPage} />
       <Route path="/og" Component={OrdersPage} />
       <Route path="/cp" Component={ControlPage1} />
+      <Route path="/ct" Component={Cart} />
+
+      <Route path="/ws" Component={WebSocketComponent} />
+
+
+      <Route path="/cp" Component={ControlPage} />
       <Route path="/sd" Component={Adjustable} />
       {/* <Route path='/buy' Component={Buy}/> */}
     </Routes>

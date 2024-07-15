@@ -7,8 +7,8 @@ import { Switch } from "@/components/ui/switch"
 export default function Modes(){
     return(
         <div className="Modes">
-            <header className="sticky top-4 flex justify-evenly h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
-                <div><nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6 ">
+            <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-2 md:px-6">
+                <nav className=" flex-col gap-2 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6 lg:pr-36">
                     <Popover>
                         <PopoverTrigger asChild>
                             <Button variant="outline">Modes</Button>
@@ -31,13 +31,11 @@ export default function Modes(){
                         </PopoverContent>
                     </Popover>    
                 </nav>
-                </div>
-                <div className="flex items-center space-x-2 px-20">
+                <div className="flex items-center space-x-2 lg:px-60">
                     <Label htmlFor="airplane-mode">Power</Label>
                     <Switch id="power" />
                 </div>
-                <div>
-                    <nav className="hidden flex-col text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6 ">
+                <nav className=" flex-col gap-2 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6 lg:pl-52">
                     <Popover>
                         <PopoverTrigger asChild>
                             <Button variant="outline">Timer</Button>
@@ -64,7 +62,6 @@ export default function Modes(){
                         </PopoverContent>
                     </Popover>
                     </nav>
-                </div>
             </header>
         </div>
     )

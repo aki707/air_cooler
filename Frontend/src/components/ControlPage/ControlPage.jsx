@@ -8,6 +8,7 @@ export default function ControlPage() {
     return (
 
         <div className="ControlPage">
+          
             <Navbar />
             <Card x-chunk="dashboard-06-chunk-0">
                 <CardHeader>

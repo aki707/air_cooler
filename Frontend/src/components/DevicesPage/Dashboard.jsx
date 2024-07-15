@@ -47,6 +47,7 @@ import axios from "axios"
 import {useEffect, useState} from 'react'
 import Options from "./Options"
 import { set } from "date-fns"
+import Realtime from "./Realtime"
 
 export default function Dashboard() {
 
@@ -95,6 +96,11 @@ export default function Dashboard() {
     }
   }
 
+  const [city, setCity] = useState();
+
+  const handleCityChange = (event) => {
+    setCity(event.target.value);
+  };
 
 // delete function
 const handleDelete = async (id) => {
@@ -335,7 +341,7 @@ const handleEditChange = (e) => {
            <div className="nested-1 ">
            <Card className="shadow-lg"  x-chunk="dashboard-01-chunk-0">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">
+              <CardTitle className="text-lg font-medium">
                 Total Electricity Consumption
               </CardTitle>
               
@@ -354,20 +360,25 @@ const handleEditChange = (e) => {
           <div className="nested-2">
           <Card className='shadow-lg' x-chunk="dashboard-01-chunk-3">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">
+              <CardTitle className="text-lg font-medium ">
                 Real-Time Environment Data
               </CardTitle>
+              <CardDescription>
+                
+              </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="readings">
-              <p> <img src="temp.png" /> Temperature: 25.5°C  </p>
-              </div>
-              <div className="readings">
-               <p> <img src="humidity.png" /> Humidity: 60%</p>
-              </div>
-              <div className="readings">
-               <p> <img src="weather.png" /> sunny</p>
-              </div>
+            {/* <div className="flex items-center w-44  border border-gray-300 rounded-md focus-within:ring focus-within:ring-blue-200">
+              <img src="Location.svg" alt="Location" className="w-5 h-5 mr-2" />
+              <input
+              className="w-full focus:outline-none"
+              type="text"
+              value={city}
+              onChange={handleCityChange}
+              placeholder="Enter city name"
+              />
+            </div> */}
+            <Realtime city={city} />
             </CardContent>
           </Card>
           </div>
