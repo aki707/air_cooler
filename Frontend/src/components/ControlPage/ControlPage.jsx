@@ -1,15 +1,8 @@
 import MachineReadings from "./MachineReadings";
 import Modes from "./Modes";
 import Navbar from "../DevicesPage/Navbar";
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-  } from "@/components/ui/card"
-  import DeviceName from "./DeviceName";
+import {Card,CardContent,CardDescription,CardFooter,CardHeader,CardTitle,} from "@/components/ui/card"
+import DeviceName from "./DeviceName";
 import Adjustable from "./Adjustable";
 export default function ControlPage() {
     return (
@@ -31,7 +24,7 @@ export default function ControlPage() {
                   <Modes />
                   </div>
                 </CardFooter>
-              </Card>
+            </Card>
         </div>
     )
 }

@@ -3,7 +3,7 @@ import WaterLevelSlider from "./WaterLevelSlider";
 
 export default function Adjustable() {
     return(
-        <div className="flex flex-row gap-4">
+        <div className=" md:flex md:flex-row md:justify-around ">
             <FanSlider />
             <WaterLevelSlider />
         </div>
