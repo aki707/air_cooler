@@ -15,8 +15,6 @@ import OrdersPage from './components/OrdersPage/OrdersPage';
 // import { ThemeProvider } from './components/theme/ThemeProvider.jsx';
 import Signin from './components/Login/Signin.jsx';
 import ControlPage1 from './components/ControlPage/ControlPage1';
-import WaterLevelSlider from './components/ControlPage/WaterLevelSlider';
-import FanSlider from './components/ControlPage/FanSlider';
 
 
 import WebSocketComponent from './components/webscoket/webSocketComponent';
@@ -55,7 +53,7 @@ function App() {
 
 
       <Route path="/cp" Component={ControlPage} />
-      {/* <Route path='/buy' Component={Buy}/> */}
+            {/* <Route path='/buy' Component={Buy}/> */}
     </Routes>
     // </ThemeProvider>
 
