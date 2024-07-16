@@ -6,7 +6,7 @@ import { Switch } from "@/components/ui/switch"
 
 export default function Modes(){
     return(
-        <div className="Modes">
+        <div className="flex justify-around">
             <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-2 md:px-6">
                 <nav className=" flex-col gap-2 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6 lg:pr-36">
                     <Popover>

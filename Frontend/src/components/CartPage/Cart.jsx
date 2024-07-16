@@ -41,22 +41,24 @@ export default function Cart() {
       </SheetTrigger>
       <SheetContent className="flex w-full flex-col pr-0 sm:max-w-lg">
         <SheetHeader className="px-1">
-          <SheetTitle>Cart {itemCount > 0 && `(${itemCount})`}</SheetTitle>
+          {/* <SheetTitle>Cart {itemCount > 0 && `(${itemCount})`}</SheetTitle> */}
+          <SheetTitle>Cart</SheetTitle>
         </SheetHeader>
         <Separator />
-        {itemCount > 0 && (
+        {/* {itemCount > 0 && ( */}
           <div className="flex flex-1 flex-col gap-5 overflow-hidden">
             <ScrollArea className="h-full">
               <div className="flex flex-col gap-5 pr-6">
-                {cartItems.map(item => (
+                <CartItem />
+                {/* {cartItems.map(item => (
                   <div key={item.product.id} className="space-y-3">
                     <CartItem item={item} />
                   </div>
-                ))}
+                ))} */}
               </div>
             </ScrollArea>
           </div>
-        )}
+        {/* )} */}
       </SheetContent>
     </Sheet>
   )

@@ -93,23 +93,8 @@ export default function ProductTab(){
         <div className="relative" style={{ height: "320px" }}>
           <ScrollArea style={{  height: "345px" ,width: "1050px", overflowX: "hidden" }}>
             <div className="prod">
-              {/* <ProductCard />
               <ProductCard />
-              <ProductCard />
-              <ProductCard /> 
-              <ProductCard />
-              
-              <ProductCard />
-              <ProductCard /> 
-              <ProductCard />
-              <ProductCard />
-              <ProductCard /> 
-              <ProductCard />
-              <ProductCard />
-              <ProductCard /> 
-              <ProductCard />
-               */}
-              <Dialog>
+              {/* <Dialog>
                 <DialogTrigger asChild>
                 <Button asChild size="sm" className="ml-auto gap-1">
                 <a href="#">
@@ -122,9 +107,9 @@ export default function ProductTab(){
               <DialogContent>
               <DialogHeader>
               <DialogTitle>Add a new Product</DialogTitle>
-              {/* <DialogDescription>
+              <DialogDescription>
                 You can find device name on website or on the device itself.
-              </DialogDescription> */}
+              </DialogDescription>
               </DialogHeader>
               <div className='grid gap-4 py-4'>
               <div className='grid gap-2'>
@@ -152,27 +137,27 @@ export default function ProductTab(){
                 value={newProduct.product_price}
                 />              
             </div>
-                {/* <Label htmlFor='url'>   Device Name</Label> */}
+                <Label htmlFor='url'>   Device Name</Label>
               </div>
             </div>
             <DialogFooter>
-              {/* <Button onClick = {postDevice}>Add</Button> */}
+              <Button onClick = {postDevice}>Add</Button>
               <Button>Add</Button>
             </DialogFooter>
           </DialogContent>
-        </Dialog>
+        </Dialog> */}
             </div>
             <ScrollBar orientation="horizontal" />
           </ScrollArea>
         </div>
-        {/* <div>
-         <Button
+        <div>
+         {/* <Button
             onClick={() => {
             }}>
             <BsPlusCircle className="mr-2 h-4 w-4" />
             Add to cart
-          </Button>
-        </div> */}
+          </Button> */}
+        </div>
       </TabsContent>
       
     </Tabs>
