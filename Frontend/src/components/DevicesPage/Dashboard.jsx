@@ -154,7 +154,7 @@ const handleEditChange = (e) => {
               </div>
               <Dialog>
           <DialogTrigger asChild>
-              <Button asChild size="sm" className="ml-auto gap-1">
+              <Button asChild size="sm" className="ml-auto gap-">
                 <a href="#">
                 <Plus className='mr-2 h-4 w-4' />
                   Add Device
@@ -163,12 +163,12 @@ const handleEditChange = (e) => {
               </DialogTrigger>
 
               <DialogContent>
-            <DialogHeader>
-              <DialogTitle>Add Device</DialogTitle>
-              <DialogDescription>
-                You can find device name on website or on the device itself.
-              </DialogDescription>
-            </DialogHeader>
+              <DialogHeader>
+                <DialogTitle>Add Device</DialogTitle>
+                <DialogDescription>
+                  You can find device name on website or on the device itself.
+                </DialogDescription>
+              </DialogHeader>
             <div className='grid gap-4 py-4'>
               <div className='grid gap-2'>
                 Device Name

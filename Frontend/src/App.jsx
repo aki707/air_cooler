@@ -17,14 +17,12 @@ import Signin from './components/Login/Signin.jsx';
 import ControlPage1 from './components/ControlPage/ControlPage1';
 import WaterLevelSlider from './components/ControlPage/WaterLevelSlider';
 import FanSlider from './components/ControlPage/FanSlider';
-import Adjustable from './components/ControlPage/Adjustable';
 
 
 import WebSocketComponent from './components/webscoket/webSocketComponent';
 
 
 import ControlPage from './components/ControlPage/ControlPage';
-import Adjustable from './components/ControlPage/Adjustable';
 import Cart from './components/CartPage/Cart';
 function App() {
   return (
@@ -57,7 +55,6 @@ function App() {
 
 
       <Route path="/cp" Component={ControlPage} />
-      <Route path="/sd" Component={Adjustable} />
       {/* <Route path='/buy' Component={Buy}/> */}
     </Routes>
     // </ThemeProvider>
