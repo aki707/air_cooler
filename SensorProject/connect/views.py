@@ -112,3 +112,7 @@ def register_page(request):
 class ProductsViewSet(viewsets.ModelViewSet):
     queryset = models.Products.objects.all()
     serializer_class = serializers.ProductsSerializer
+    
+class CartViewSet(viewsets.ModelViewSet):
+    queryset = models.Cart.objects.all()
+    serializer_class = serializers.CartSerializer
