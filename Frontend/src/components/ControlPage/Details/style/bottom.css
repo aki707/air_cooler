@@ -1,0 +1,21 @@
+.main{
+    padding: 0px 15px;
+    margin: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(191, 192, 189);
+    border-radius: 5px;
+    color: black;
+}
+
+.main div{
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.power{
+    text-align: center;
+}

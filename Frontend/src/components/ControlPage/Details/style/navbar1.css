@@ -1,0 +1,32 @@
+.nav{
+    padding: 0px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    min-width: 100%;
+}
+
+.nav .btn{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    margin: 2px 5px;
+    box-shadow: none;
+    border: none;
+}
+
+.nav .text{
+    color: black;
+    font-family: bolder;
+}
+
+.nav .connected{
+    /* background-color: rgb(95, 97, 98); */
+    color: black;
+    /* background-color: black; */
+    /* color: white; */
+    border-radius: 5px;
+    border: none;
+    margin: 2px 5px;
+}

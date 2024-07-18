@@ -9,12 +9,12 @@ import {
 import './PotentialAD.css'
 export default function PotentialAD() {
     return(
-        <div className="potentialAD">
+        <div className="potentialAD w-full">
             <Card sx={{ display: 'flex', height: 200, width: 181 }}>
-                 <div className='ad'>
+                <div className='ad pt-4 flex flex-col sm:flex-row '>
                         <CardContent className="p-0 pl-2">
                             <div>
-                                <img src="/Coolernew.jpg" alt="cooler" className="w-full h-36 object-contain" />
+                                <img src="/Coolernew.jpg" alt="cooler" className="w-auto h-36 object-contain" />
                             </div>
                         </CardContent>
                     
@@ -24,7 +24,7 @@ export default function PotentialAD() {
                                 <h6>Potential AD-Device Name (Model Number)</h6>
                             </div>
                             < div>
-                            <h6>Potential Description- jhjgfjhsvjdajhvbjhbvjblzbljxbvcljzbxvgjbglagjbb </h6>
+                                <h6>Potential Description- ////description//// </h6>
                             </div>
                             
                         </CardContent>

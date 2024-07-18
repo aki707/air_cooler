@@ -1,18 +1,14 @@
-import {
-    Popover,
-    PopoverContent,
-    PopoverTrigger,
-  } from "@/components/ui/popover"
-  import { Label } from "@/components/ui/label"
-  import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-  import { Button } from "@/components/ui/button"
-  import { Switch } from "@/components/ui/switch"
+import {Popover,PopoverContent,PopoverTrigger,} from "@/components/ui/popover"
+import { Label } from "@/components/ui/label"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { Button } from "@/components/ui/button"
+import { Switch } from "@/components/ui/switch"
 
 export default function Modes(){
     return(
-        <div className="Modes">
-            <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
-                <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6 pr-36">
+        <div className="flex justify-around">
+            <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-2 md:px-6">
+                <nav className=" flex-col gap-2 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6 lg:pr-36">
                     <Popover>
                         <PopoverTrigger asChild>
                             <Button variant="outline">Modes</Button>
@@ -33,13 +29,13 @@ export default function Modes(){
                                 </div>
                             </RadioGroup>
                         </PopoverContent>
-                    </Popover>
+                    </Popover>    
                 </nav>
-                <div className="flex items-center space-x-2 px-60">
+                <div className="flex items-center space-x-2 lg:px-60">
                     <Label htmlFor="airplane-mode">Power</Label>
                     <Switch id="power" />
                 </div>
-                <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6 pl-52">
+                <nav className=" flex-col gap-2 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6 lg:pl-52">
                     <Popover>
                         <PopoverTrigger asChild>
                             <Button variant="outline">Timer</Button>
@@ -65,7 +61,7 @@ export default function Modes(){
                             </RadioGroup>
                         </PopoverContent>
                     </Popover>
-                </nav>
+                    </nav>
             </header>
         </div>
     )
