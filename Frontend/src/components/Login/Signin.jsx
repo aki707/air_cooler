@@ -11,9 +11,31 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
-export default function Signin() {
+
+
+import React, {useState, useContext} from 'react'
+import { Link } from 'react-router-dom' 
+import AuthContext from "../context/AuthContext"
+
+
+const Signin = () => {
+  const {loginUser} = useContext(AuthContext)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    // console.log(e.target)
+
+    const email = e.target.email.value
+    const password = e.target.password.value
+
+    loginUser(email, password)
+  
+  
+  }
+
+
   return (
-    <Card className="mx-auto max-w-sm">
+    <Card onSubmit={handleSubmit} className="mx-auto max-w-sm">
       <CardHeader>
         <CardTitle className="text-2xl">Login</CardTitle>
         <CardDescription>
@@ -21,7 +43,7 @@ export default function Signin() {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="grid gap-4">
+      <form onSubmit={handleSubmit} className="grid gap-4">
           <div className="grid gap-2">
             <Label htmlFor="email">Email</Label>
             <Input
@@ -40,13 +62,14 @@ export default function Signin() {
             </div>
             <Input id="password" type="password" required />
           </div>
-          <Button type="submit" className="w-full">
+          <Button  type="submit" className="w-full">
             Login
           </Button>
           <Button variant="outline" className="w-full">
             Login with Google
           </Button>
-        </div>
+          </form>
+        
         <div className="mt-4 text-center text-sm">
           Don&apos;t have an account?{" "}
           <a href="/signup" className="underline">
@@ -57,3 +80,4 @@ export default function Signin() {
     </Card>
   )
 }
+export default Signin
