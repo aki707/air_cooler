@@ -36,15 +36,15 @@ import './OrdersPage.css'
 import PotentialAD from "./PotentialAD"
 export default function OrdersPage() {
   return (
-    <div className="flex min-h-screen w-full flex-col bg-muted/40">
+    <div className="flex w-full flex-col ">
       <div className="flex flex-col gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
         <div>
           <Navbar />
         </div>
-        <main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
+        <main className="grid flex-1 items-start gap-4 p-4  sm:py-0 md:gap-8">
           <div>
           <PotentialAD />
-        </div>
+         </div>
           <Tabs defaultValue="all">
             <TabsContent value="all">
               <Card x-chunk="dashboard-06-chunk-0">
@@ -99,7 +99,7 @@ export default function OrdersPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Table>
+                  <Table className="overflow-scroll">
                     <TableHeader>
                       <TableRow>
                         <TableHead className="Ordershead">

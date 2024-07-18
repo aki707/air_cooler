@@ -14,9 +14,9 @@ import {
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuTrigger,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
 import {
@@ -34,21 +34,21 @@ import ProductTab from "./ProductTab"
 import Cartnum from "../CartPage/CartIcon"
 export default function ProductPage() {
   return (
-    <div className="flex min-h-screen w-full flex-col bg-muted/40">
+    <div  className=" flex min-h-screen w-full flex-col bg-muted/40">
         <div className="flex flex-col gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
-          <div>
+          
             < Navbar />
-          </div>
+          
         <main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
-          <Tabs defaultValue="all">
-            <div className="flex items-center">
+          <div style={{width:'100%', overflow:'hidden'}}><Tabs defaultValue="all">
+            <div className="flex items-center w-auto">
             <div className="Search">
             <Input
               type="search"
               placeholder="Search..."
               className="w-full rounded-lg bg-background pl-8 md:w-[200px] lg:w-[336px]"
             />
-          </div>
+            </div>
               <div className="ml-auto flex items-center gap-2">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
@@ -129,6 +129,7 @@ export default function ProductPage() {
               </Card>
             </TabsContent>
           </Tabs>
+          </div>
         </main>
       </div>
     </div>

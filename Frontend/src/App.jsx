@@ -20,15 +20,24 @@ import ControlPage1 from './components/ControlPage/ControlPage1';
 import WebSocketComponent from './components/webscoket/webSocketComponent';
 
 
+import React from 'react'
+
+//import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import ProtectedRoute from "./utils/ProtectedRoute"
+import { AuthProvider } from './components/context/AuthContext.jsx'
+
+
 import ControlPage from './components/ControlPage/ControlPage';
 import ShoppingCart from './components/CartPage/ShoppingCart';
 //import { ShoppingCart } from 'lucide-react';
 function App() {
   return (
     // <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+    <AuthProvider>
     <Routes>
       <Route path="/" Component={Signin} />
       <Route path="/signup" Component={SignUp} />
+      <Route path="/signin" Component={Signin} />
       <Route path="/dashboard" Component={Dashboard} />
 
   // Setting routing
@@ -56,6 +65,7 @@ function App() {
       <Route path="/cp" Component={ControlPage} />
             {/* <Route path='/buy' Component={Buy}/> */}
     </Routes>
+    </AuthProvider>
     // </ThemeProvider>
 
   );

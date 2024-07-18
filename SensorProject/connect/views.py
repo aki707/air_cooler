@@ -9,12 +9,55 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse, JsonResponse
 # from django.views.decorators.csrf import csrf_exempt
 
+from .serializers import MyTOPS, RegistrationSerializer
+from .models import User
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.response import Response
+from rest_framework_simplejwt.views import TokenObtainPairView
+from rest_framework import generics
+from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework import status
+
+
+
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 ESP32_IP = 'http://192.168.1.114'  # Replace with the IP address of your ESP32
 
 
 
 # Create your views here.
+
+
+
+class MyTokenObtainPairView(TokenObtainPairView):
+    serializer_class = MyTOPS
+
+class RegisterView(generics.CreateAPIView):
+    queryset = User.objects.all()
+    permission_classes = (AllowAny,)
+    serializer_class = RegistrationSerializer
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def protectedView(request):
+    output = f"Welcome {request.user.profile.full_name}, Authentication SUccessful"
+    return Response({'response':output}, status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+def view_all_routes(request):
+    router = [
+        'connect/token/refresh/',
+        'connect/register/',
+        'connect/token/'
+    ]
+
+    return Response(router)
+
+
 
 class SensorViewSet(viewsets.ModelViewSet):
     queryset = models.Sensor.objects.all()

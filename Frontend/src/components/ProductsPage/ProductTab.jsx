@@ -90,9 +90,9 @@ export default function ProductTab(){
     <Tabs defaultValue="music" className="h-full space-y-6">
       <TabsContent value="music" className="border-none p-0 outline-none">
         <Separator className="my-4" />
-        <div className="relative" style={{ height: "320px" }}>
-          <ScrollArea style={{  height: "345px" ,width: "1050px", overflowX: "hidden" }}>
-            <div className="prod">
+        <div className="relative" style={{ border:'2px solid red',height: "320px" ,width:'80%',}}>
+          <ScrollArea style={{ height: "345px" ,width: '100vw', overflowX: "hidden" }}>
+            <div className="prod flex flex-col items-center justify-between sm:flex-row">
               <ProductCard />
               {/* <Dialog>
                 <DialogTrigger asChild>
