@@ -21,7 +21,8 @@ import WebSocketComponent from './components/webscoket/webSocketComponent';
 
 
 import ControlPage from './components/ControlPage/ControlPage';
-import Cart from './components/CartPage/Cart';
+import ShoppingCart from './components/CartPage/ShoppingCart';
+//import { ShoppingCart } from 'lucide-react';
 function App() {
   return (
     // <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
@@ -47,7 +48,7 @@ function App() {
       <Route path="/pg" Component={ProductPage} />
       <Route path="/og" Component={OrdersPage} />
       <Route path="/cp" Component={ControlPage1} />
-      <Route path="/ct" Component={Cart} />
+      <Route path="/ct" Component={ShoppingCart} />
 
       <Route path="/ws" Component={WebSocketComponent} />
 
