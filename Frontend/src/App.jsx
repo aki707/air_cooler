@@ -25,7 +25,7 @@ import React from 'react'
 //import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import ProtectedRoute from "./utils/ProtectedRoute"
 import { AuthProvider } from './components/context/AuthContext.jsx'
-
+import CartPage from './components/CartPage/CartPage';
 
 import ControlPage from './components/ControlPage/ControlPage';
 import ShoppingCart from './components/CartPage/ShoppingCart';
@@ -35,7 +35,7 @@ function App() {
     // <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
     <AuthProvider>
     <Routes>
-      <Route path="/" Component={Signin} />
+      <Route path="/" Component={CartPage} />
       <Route path="/signup" Component={SignUp} />
       <Route path="/signin" Component={Signin} />
       <Route path="/dashboard" Component={Dashboard} />
