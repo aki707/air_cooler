@@ -78,6 +78,7 @@ class Products(models.Model):
 class Cart(models.Model):
        product_name = models.CharField(max_length=255)
        product_price = models.IntegerField()
+       product_quantity = models.IntegerField(default=1)
        timestamp = models.DateTimeField(auto_now_add=True)
        created_at = models.DateTimeField(auto_now_add=True)
        updated_at = models.DateTimeField(auto_now=True)
