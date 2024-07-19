@@ -35,7 +35,7 @@ function App() {
     // <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
     <AuthProvider>
     <Routes>
-      <Route path="/" Component={CartPage} />
+      <Route path="/" Component={Signin} />
       <Route path="/signup" Component={SignUp} />
       <Route path="/signin" Component={Signin} />
       <Route path="/dashboard" Component={Dashboard} />
@@ -57,7 +57,7 @@ function App() {
       <Route path="/pg" Component={ProductPage} />
       <Route path="/og" Component={OrdersPage} />
       <Route path="/cp" Component={ControlPage1} />
-      <Route path="/ct" Component={ShoppingCart} />
+      <Route path="/ct" Component={CartPage} />
 
       <Route path="/ws" Component={WebSocketComponent} />
 
